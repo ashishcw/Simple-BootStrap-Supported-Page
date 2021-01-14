@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap-table.min.css">
 
+    <script src="./js/PapaParse/papaparse.min.js"></script>
+
+    <script src="./js/JScriptManualExtender/DataDumper.js" type="text/javascript"></script>
+    <script src="./jquery/jquery.min.js" type="text/javascript"></script>
+
 </head>
 
 <body>
@@ -94,55 +99,41 @@
 
 </body>
 
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> -->
-<script src="./js/PapaParse/papaparse.min.js"></script>
-<script src="./js/JScriptManualExtender/DataDumper.js" type="text/javascript"></script>
+
 <script>
 
-    // $(document).ready(function () {
-    //     $.ajax({
-    //         type: "GET",
-    //         url: "js\\JScriptManualExtender\\data.csv",
-    //         dataType: "text",
-    //         success: function (data) { processData(data); }
-    //     });
-    // });
+    $(document).ready(function () {
+        $.ajax({
+            type: "GET",
+            url: "js\\JScriptManualExtender\\data.csv",
+            dataType: "text",
+            success: function (data) { processData(data); }
+        });
+    });
 
-    // function processData(allText) {
-    //     var record_num = 5;
-    //     var allTextLines = allText.split(/\r\n|\n/);
-    //     var entries = allTextLines[0].split(',');
-    //     var lines = [];
+    function processData(allText) {
+        var record_num = 5;  // or however many elements there are in each row        
+        var allTextLines = allText.split(/\r\n|\n/);        
+        for(var i = 0; i < allText.length; i++)
+        {
+            var entries = allTextLines[i].split(',');
+            console.log(entries);
+        }
+        var lines = [];
 
-    //     var headings = entries.splice(0, record_num);
-    //     while (entries.length > 0) {
-    //         var tarr = [];
-    //         for (var j = 0; j < record_num; j++) {
-    //             tarr.push(headings[j] + ":" + entries.shift());
-    //         }
-    //         lines.push(tarr);
-    //     }
-    //     // alert(lines);
-    // }
-
+        var headings = entries.splice(0, record_num);
+        while (entries.length > 0) {
+            var tarr = [];
+            for (var j = 0; j < record_num; j++) {
+                tarr.push(headings[j] + ":" + entries.shift());
+            }
+            lines.push(tarr);
+        }
+        // alert(lines);
+    }
 
 </script>
 
 
-<!-- <script type="text/javascript">
-    $(document).ready(
-        //alert("Found"),
-        $.ajax({
-                type:"GET",
-                url:"client\\data.csv",
-                dataType:"text",
-                success:function(data){
-                    console.log(data);                    
-                }
-            }),
-        function(){            
-        }
-    );
-</script> -->
 
 </html>
