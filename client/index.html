@@ -69,11 +69,15 @@
 
         </div>
 
+        <div id="main_table">
+
+        </div>
+
     </div>
 
 </body>
 
-
+<!-- 
 <script>
 
     $(document).ready(function () {
@@ -81,23 +85,23 @@
             type: "GET",
             url: "js\\JScriptManualExtender\\data.csv",
             dataType: "text",
-            success: function (data) { 
-                processData(data); 
-                $('#dataTable').append(arrayToTable(Papa.parse(data).data));               
+            success: function (data) {
+                processData(data);
+                $('#dataTable').append(arrayToTable(Papa.parse(data).data));
             }
         });
     });
 
-    function processData(allText) {        
+    function processData(allText) {
         var allTextLines = allText.split(/\r\n|\n/);
         var headers = allTextLines[0].split(',');
         var lines = [];
 
-        for (var i = 1; i < allTextLines.length; i++){
+        for (var i = 1; i < allTextLines.length; i++) {
             var data = allTextLines[i].split(',');
-            if(data.length == headers.length){
+            if (data.length == headers.length) {
                 var tarr = [];
-                for ( var j = 0; j < headers.length; j++){
+                for (var j = 0; j < headers.length; j++) {
                     tarr.push(headers[j] + ":" + data[j]);
                 }
                 lines.push(tarr);
@@ -106,21 +110,54 @@
         // alert(lines);
     }
 
-    function arrayToTable(tableData){
-        var table = $('<table table-dark></table>');
-        var thread = $('<thread></thread>')
-        $(tableData).each(function(i, rowData){
+    function arrayToTable(tableData) {
+        var table = $('<table table-dark>');
+        var thead = $('<thead></thead>')
+        $(tableData).each(function (i, rowData) {
             var row = $('<tr></tr>');
-            $(rowData).each(function(j, cellData){
-                row.append($('<td style-"width: 10%">' + cellData + '</td>'));                
+            $(rowData).each(function (j, cellData) {
+                row.append($('<td style-"width: 10%">' + cellData + '</td>'));
             });
-            table.append(thread.append(row));
+            table.append(thead.append(row));
         });
         return table;
     }
 
-</script>
+</script> -->
 
+
+<script>
+    $(document).ready(function(){
+        $.ajax({
+            url: "js\\JScriptManualExtender\\data.csv",
+            dataType: "text",
+            success:function(data){
+                var csv_data = data.split(/\r?\n|\r/);
+                var csv_table_data = '<table class="table table-bordered table-striped">';
+                for(var count = 0; count < csv_data.length; count++){
+
+                    var cell_data = csv_data[count].split(",");
+                    csv_table_data += '<tr>';
+                    
+                    for(var cell_Count=0; cell_Count < cell_data.length; cell_Count++){
+
+                        if(cell_Count === 0){
+                            csv_table_data += '<th>' + cell_data[cell_Count] + '</th>';
+
+                        }else{
+                            csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+                        }
+                    }
+                    csv_table_data += '</tr>';
+                }
+
+                csv_table_data += '</table>';
+                $('#main_table').html(csv_table_data);
+                    
+            }
+        });
+    });
+</script>
 
 
 </html>
