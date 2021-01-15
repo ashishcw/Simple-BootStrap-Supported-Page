@@ -1,2 +1,6 @@
-ANY SERVER SIDE PACKAGE, CODE, CLASS OR OBJECTS WILL GO INSIDE THIS DIRECTORY.
+Local Data Source Should go here for the server side processing.
 E.g. Express for Node, Spring for JAVA
+
+Again, Ideally, all the filteration should be done at the server end and only pass the data which is applicable to the client end rendering.
+
+However, this project is aimed to be used internally, there is no need for the full stack implementation

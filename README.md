@@ -1,7 +1,8 @@
 "# Simple-BootStrap-Supported-Page" 
 This is a simple page, made specifically for the client-side rendering. The purpose of this page is to fetch the data from any of the data-sources(e.g csv file), and then populate the data using JavaScript.
 
-Please note, this is not an ideal practice to populate the data without any of the security measures, however this is only useful, if both, client and server(processing data) are getting used internally.
+Please note, this is not an ideal practice to populate the data without any of the security measures, and perform all types of data handling processes at client side should strictly prohibited at all cost. You should always send the data which is applicable for the rendering purposes to the client side. However this project is aimed for an internal use only, and thus both, client and server(processing data) are getting used internally.
+
 
 Additional Components used in this project.
 

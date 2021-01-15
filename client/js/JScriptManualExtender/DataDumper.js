@@ -1,8 +1,6 @@
-//const Papa = "../PapaParse/papaparse.min.js";
-
-function callbackFunction(data) {    
+function callbackFunction(data) {        
     
-    console.log(data);
+     console.log(data);
 }
 
 function dataParser(url, callbackfunction) {    
@@ -10,9 +8,13 @@ function dataParser(url, callbackfunction) {
         download: true,
         dynamicTyping: true,
         complete: function(results) {
+
             callbackfunction(results.data);
+            return results.data;
+            
         }
     });
 }
-dataParser("js\\JScriptManualExtender\\data.csv", callbackFunction);
-alert("Found");
+
+//var data = dataParser("js\\JScriptManualExtender\\data.csv", callbackFunction);
+//console.log(data);
