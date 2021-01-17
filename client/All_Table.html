@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
+    <title>All Table</title>
     <link rel="stylesheet" href="./css/project.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/bootstrap-table.min.css">
@@ -24,6 +24,7 @@
 </head>
 
 <body>
+
     <div class="wrapper container">
         <div class="row">
             <!-- navbar definition goes here -->
@@ -54,82 +55,23 @@
 
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            This is a Chart Page Placeholder
+                            All Table Page Placeholder
                         </h1>
                     </div>
 
                 </div>
 
 
-                <div class="card">
-                    <div class="card-body">
-                        <canvas id="myChart" width="400" height="100"></canvas>
-                    </div>
+                <div id="main_table">
+
                 </div>
 
-
-
             </div>
+
         </div>
     </div>
 
-
 </body>
-
-
-<script>
-
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "js\\JScriptManualExtender\\data.csv",
-            dataType: "text",
-            success: function (data) {
-                processData(data);
-                $('#dataTable').append(arrayToTable(Papa.parse(data).data));
-            }
-        });
-    });
-
-    function processData(allText) {
-        var allTextLines = allText.split(/\r\n|\n/);
-        var headers = allTextLines[0].split(',');
-        var lines = [];
-
-        for (var i = 1; i < allTextLines.length; i++) {
-            var data = allTextLines[i].split(',');
-            if (data.length == headers.length) {
-                var tarr = [];
-                for (var j = 0; j < headers.length; j++) {
-                    tarr.push(headers[j] + ":" + data[j]);
-                }
-                lines.push(tarr);
-            }
-        }
-        // alert(lines);
-    }
-
-    function arrayToTable(tableData) {
-        var table = $('<table table-dark>');
-        var thead = $('<thead></thead>')
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td style-"width: 10%">' + cellData + '</td>'));
-            });
-            table.append(thead.append(row));
-        });
-        return table;
-    }
-
-</script>
-
-<script src="./js/JScriptManualExtender/ChartDefinition.js"></script>
-<!-- <script type="text/javascript">CustomChart()</script> -->
-<script type="text/javascript">CustomChart_2()</script>
-
-
-
 
 <script>
     $(document).ready(function () {
