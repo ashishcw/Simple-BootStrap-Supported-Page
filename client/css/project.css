@@ -2,6 +2,13 @@ body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
 }
 
+.card{
+	width: 1300px;
+	margin: 0 auto;
+	float: none;
+	margin-bottom: 10px;
+}
+
 .container-table{
 	margin-top: 100px;	
 }
