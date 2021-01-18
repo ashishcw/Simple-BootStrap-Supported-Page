@@ -1,12 +1,12 @@
-id,firstname,lastname,email,email2,profession,DOB
-100,Alameda,Haymes,Alameda.Haymes@yopmail.com,Alameda.Haymes@gmail.com,worker,04/29/1973
-101,Jobi,Willie,Jobi.Willie@yopmail.com,Jobi.Willie@gmail.com,developer,01/15/2021
-102,Dorthy,Frendel,Dorthy.Frendel@yopmail.com,Dorthy.Frendel@gmail.com,worker,04/16/1977
-103,Kalina,Kronfeld,Kalina.Kronfeld@yopmail.com,Kalina.Kronfeld@gmail.com,worker,02/26/1960
-104,Romona,Pearse,Romona.Pearse@yopmail.com,Romona.Pearse@gmail.com,police officer,01/12/1987
-105,Gerrie,Friede,Gerrie.Friede@yopmail.com,Gerrie.Friede@gmail.com,police officer,07/12/1969
-106,Ellette,Cassius,Ellette.Cassius@yopmail.com,Ellette.Cassius@gmail.com,worker,11/14/1973
-107,Rivalee,Yuille,Rivalee.Yuille@yopmail.com,Rivalee.Yuille@gmail.com,doctor,03/15/2020
-108,Kore,Cecile,Kore.Cecile@yopmail.com,Kore.Cecile@gmail.com,developer,06/28/1997
-109,Lita,Publia,Lita.Publia@yopmail.com,Lita.Publia@gmail.com,doctor,10/09/2020
-110,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Katharina.Hepsibah@gmail.com,developer,01/11/2021
+id,firstname,lastname,email,email2,Category,DOB,Priority, Status,
+100,Alameda,Haymes,Alameda.Haymes@yopmail.com,Alameda.Haymes@gmail.com,worker,04/29/1973,2, Open
+101,Jobi,Willie,Jobi.Willie@yopmail.com,Jobi.Willie@gmail.com,developer,01/15/2021,3, Open
+102,Dorthy,Frendel,Dorthy.Frendel@yopmail.com,Dorthy.Frendel@gmail.com,worker,04/16/1977,1, Closed
+103,Kalina,Kronfeld,Kalina.Kronfeld@yopmail.com,Kalina.Kronfeld@gmail.com,worker,02/26/1960,4, Open
+104,Romona,Pearse,Romona.Pearse@yopmail.com,Romona.Pearse@gmail.com,police officer,01/12/1987,2, Closed
+105,Gerrie,Friede,Gerrie.Friede@yopmail.com,Gerrie.Friede@gmail.com,police officer,07/12/1969,4, In-Progress
+106,Ellette,Cassius,Ellette.Cassius@yopmail.com,Ellette.Cassius@gmail.com,worker,11/14/1973,5, Open
+107,Rivalee,Yuille,Rivalee.Yuille@yopmail.com,Rivalee.Yuille@gmail.com,doctor,03/15/2020,2,In-Progress
+108,Kore,Cecile,Kore.Cecile@yopmail.com,Kore.Cecile@gmail.com,developer,06/28/1997,5,Closed
+109,Lita,Publia,Lita.Publia@yopmail.com,Lita.Publia@gmail.com,doctor,10/09/2020,1,In-Progress
+110,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Katharina.Hepsibah@gmail.com,developer,01/11/2021,3,In-Progress
