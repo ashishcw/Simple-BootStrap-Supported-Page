@@ -21,131 +21,284 @@
     <!-- ChartJs -->
     <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
 
+
+    <!-- global variables -->
+    <script type='text/javascript'>
+        var Infrastructure_Count = 0;
+        var Product_Count = 0;
+        var Other_Count = 0;
+    </script>
+
 </head>
 
 <body>
-    <div class="wrapper container">
-        <div class="row">
-            <!-- navbar definition goes here -->
-            <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-            <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
-                <div class="container">
-                    <div class="navbar-header">
-                        <div class="container-fluid-nav">
-                            <ul class="nav navbar-nav">
-                                <li>
-                                    <a href="index.html">
-                                        <h3>
-                                            Main Chart
-                                        </h3>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!--nabar head ends here -->
-                </div>
-                <!--container ends here -->
-            </nav>
 
+    <!-- navbar definition goes here -->
+    <nav class="navbar navbar-dark bg-primary">
+        <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
+        <div class="container">
+            <div class="navbar-header">
+                <div class="container-fluid-nav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="navbar-brand" href="index.html">
+                                <h3>
+                                    Main Page
+                                </h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--nabar head ends here -->
+        </div>
+
+        <!--container ends here -->
+    </nav>
+
+    <div class="wrapper container">
+
+        <div class="row">
 
             <div class="container-table">
-
+                <hr>
+                <!-- chart and Table goes here -->
                 <div class="row">
 
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            This is a Chart Page Placeholder
+                            Categorical Representation
                         </h1>
                     </div>
 
-                </div>
 
-                <!-- All cards and charts goes here -->
-                <div>
-                    <!-- Historical Table -->
-                    <div class="card text-center">
-                        <div class="card-header">
-                          Featured
-                        </div>
-                        <div class="card-body">                          
-                          <!-- <canvas id="initial_Chart_Display" width="400" height="150"></canvas> -->
-                        </div>
-                        <div class="card-footer text-muted">
-                          Last Updated 1 day ago
-                        </div>
-                      </div>
-
-                    <div class="card_Historical_Chart">
-                        <div class="card-body">
-                            <canvas id="initial_Chart_Display" width="400" height="150"></canvas>
+                    <div>
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <canvas id="initial_Chart_Display" width="400" height="150"></canvas>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Historical Table -->
-                    <div class="card_Day_Wise_DoughNut_Chart">
-                        <div class="card-body">
-                            <canvas id="initial_DoughNut_Chart_Display" width="400" height="100"></canvas>
-                        </div>
-                    </div>
                 </div>
+
+                <hr>
+
+                <!-- Prioritywise Count goes here -->
+                <div class="row">
+                    <div class="card-body">
+
+                        <!-- <div class="card_Historical_Chart">
+                            <div class="card-body">                                
+                                <div id="main_table"></div>
+                            </div>
+                        </div> -->
+
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Prioritywise Count
+                            </h1>
+                        </div>
+
+                        <!-- <div class="card" style="width: 200px;">
+                            <div class="card-body">
+                                <h3 class="card-title">Priority 1</h3>
+                                <p class="card-text">Total Count : 20</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div> -->
+
+
+                        <div class="text-center">
+                            <div class="row">
+
+                                <!-- Priority 1 -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Priority 1</h3>
+                                            <p class="card-text">Total Count : 20</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority 2 -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Priority 2</h3>
+                                            <p class="card-text">Total Count : 10</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority 3 -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Priority 3</h3>
+                                            <p class="card-text">Total Count : 32</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Priority 4 -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Priority 4</h3>
+                                            <p class="card-text">Total Count : 74</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- Prioritywise Table goes here -->
+                <div class="row">
+                    <div class="card-body">
+
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Prioritywise Table
+                            </h1>
+                        </div>
+
+
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div id="main_table"></div>                                    
+                                </div>
+                                <div id="main_table"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- Statuswise Count goes here -->
+                <div class="text-center">
+                    <div class="row">
+                        <div class="card-body">
+
+                            <div class="col-lg-12">
+                                <h1 class="page-header">
+                                    Statuswise Count
+                                </h1>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-sm-2">
+                                </div>
+
+                                <!-- Status Open -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Open</h3>
+                                            <p class="card-text">Count : 50</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Status In-Progress -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">In-Progress</h3>
+                                            <p class="card-text">Count : 27</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Status Closed -->
+                                <div class="col-sm-3">
+                                    <div class="card" style="width: 200px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title">Closed</h3>
+                                            <p class="card-text">Count : 17</p>
+                                            <!-- <a href="#" class="btn btn-primary">Go</a> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- Statuswise Table goes here -->
+                <div class="row">
+                    <div class="card-body">
+
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Statuswise Table
+                            </h1>
+                        </div>
+
+
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div id="main_table_2"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
 
-
 </body>
 
 
-<script>
-
-    $(document).ready(function () {
-        $.ajax({
-            type: "GET",
-            url: "js\\JScriptManualExtender\\data.csv",
-            dataType: "text",
-            success: function (data) {
-                processData(data);
-                $('#dataTable').append(arrayToTable(Papa.parse(data).data));
-            }
-        });
-    });
-
-    function processData(allText) {
-        var allTextLines = allText.split(/\r\n|\n/);
-        var headers = allTextLines[0].split(',');
-        var lines = [];
-
-        for (var i = 1; i < allTextLines.length; i++) {
-            var data = allTextLines[i].split(',');
-            if (data.length == headers.length) {
-                var tarr = [];
-                for (var j = 0; j < headers.length; j++) {
-                    tarr.push(headers[j] + ":" + data[j]);
-                }
-                lines.push(tarr);
-            }
-        }
-        // alert(lines);
-    }
-
-    function arrayToTable(tableData) {
-        var table = $('<table table-dark>');
-        var thead = $('<thead></thead>')
-        $(tableData).each(function (i, rowData) {
-            var row = $('<tr></tr>');
-            $(rowData).each(function (j, cellData) {
-                row.append($('<td style-"width: 10%">' + cellData + '</td>'));
-            });
-            table.append(thead.append(row));
-        });
-        return table;
-    }
-
-</script>
-
+<!-- Chart related scripts -->
 <script src="./js/JScriptManualExtender/ChartDefinition.js"></script>
-<script type="text/javascript">CustomChart()</script>
+<!-- <script type="text/javascript">CustomChart()</script> -->
+<script type="text/javascript">CustomChart_Category();</script>
+
+<!-- Table Specific Scripts -->
+<script type="text/javascript">Table_Formation("main_table", 0, 6);</script>
+<script type="text/javascript">Table_Formation("main_table_2", 0, 7);</script>
+
+<hr>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Ashish Rathi 2020</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
 
 
 

@@ -17,7 +17,7 @@ function dataParser(url, callbackfunction) {
 }
 
 
-function Table_Formation(){
+function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2){
     $(document).ready(function () {
         $.ajax({
             url: "js\\JScriptManualExtender\\data.csv",
@@ -32,24 +32,67 @@ function Table_Formation(){
 
                     for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
 
-                        if (cell_Count === 0) {
-                            csv_table_data += '<th>' + cell_data[cell_Count] + '</th>';
+                        if (count === 0) {
+                            if(cell_Count === cell_Count_Field_1 || cell_Count === cell_Count_Field_2){
+                                csv_table_data += '<th>' + cell_data[cell_Count] + '</th>';
+                            }
+                            
 
                         } else {
-                            csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+                            if(cell_Count === cell_Count_Field_1 || cell_Count === cell_Count_Field_2){
+                                csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+                            }
+                            //csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+                            
                         }
                     }
                     csv_table_data += '</tr>';
                 }
 
                 csv_table_data += '</table>';
-                $('#main_table').html(csv_table_data);
+                $(`#${table_id}`).html(csv_table_data);
 
             }
         });
     });
 
 }
+
+
+function sortTable() {
+    var table, rows, switching, i, x, y, shouldSwitch;
+    table = document.getElementById("main_table");    
+    switching = true;
+    /* Make a loop that will continue until
+    no switching has been done: */
+    while (switching) {
+      // Start by saying: no switching is done:
+      switching = false;
+      rows = table.rows;
+      /* Loop through all table rows (except the
+      first, which contains table headers): */
+      for (i = 1; i < (rows.length - 1); i++) {
+        // Start by saying there should be no switching:
+        shouldSwitch = false;
+        /* Get the two elements you want to compare,
+        one from current row and one from the next: */
+        x = rows[i].getElementsByTagName("TD")[0];
+        y = rows[i + 1].getElementsByTagName("TD")[0];
+        // Check if the two rows should switch place:
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          // If so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+      if (shouldSwitch) {
+        /* If a switch has been marked, make the switch
+        and mark that a switch has been done: */
+        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+        switching = true;
+      }
+    }
+  }
 
 //var data = dataParser("js\\JScriptManualExtender\\data.csv", callbackFunction);
 //console.log(data);
