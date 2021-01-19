@@ -2,6 +2,18 @@ body {
 	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
 }
 
+hr.dashed {
+	border-top: 3px dashed #bbb;
+	width: 800px;
+  }
+
+  
+hr.rounded {
+	border-top: 8px solid #bbb;
+	border-radius: 5px;
+	width: 700px;
+  }
+
 .card_Historical_Chart{
 	width: 1100px;
 	margin: 0 auto;
@@ -10,14 +22,14 @@ body {
 }
 
 .container-table{
-	margin-top: 100px;	
+	margin-top: 20px;	
 }
 .page-header{
 	margin-bottom: 50px;
 	text-align: center;
 }
 
-.navbar.navbar-inverse .navbar-header {
+.navbar.navbar-dark .navbar-header {
     text-align: center;
 	width: 100%;
 	height: 0%;
