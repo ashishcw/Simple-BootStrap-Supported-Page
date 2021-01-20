@@ -1,6 +1,15 @@
 body {
-	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+	margin-top: 50px; /* 50px is the height of the navbar - change this if the navbarn height changes */	
+	font-family: 'Lato', arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 300;
+	background-color: whitesmoke !important;
 }
+
+body {
+	
+	}
 
 hr.dashed {
 	border-top: 3px dashed #bbb;
