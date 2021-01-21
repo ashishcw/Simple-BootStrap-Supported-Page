@@ -3,10 +3,10 @@ ID,First-Name,Last-Name,Email,Category,DOB,Priority,Status
 101,Jobi,Willie,Jobi.Willie@yopmail.com,Product,01/15/2021,3,Open
 102,Dorthy,Frendel,Dorthy.Frendel@yopmail.com,Infrastructure,04/16/1977,1,Closed
 103,Kalina,Kronfeld,Kalina.Kronfeld@yopmail.com,Infrastructure,02/26/1960,4,Open
-104,Romona,Pearse,Romona.Pearse@yopmail.com,Other,01/12/1987,2,Closed
+104,Romona,Pearse,Romona.Pearse@yopmail.com,Product,01/12/1987,2,Closed
 105,Gerrie,Friede,Gerrie.Friede@yopmail.com,Other,07/12/1969,4,In-Progress
 106,Ellette,Cassius,Ellette.Cassius@yopmail.com,Infrastructure,11/14/1973,1,Open
 107,Rivalee,Yuille,Rivalee.Yuille@yopmail.com,Product,03/15/2020,2,In-Progress
 108,Kore,Cecile,Kore.Cecile@yopmail.com,Product,06/28/1997,3,Closed
-109,Lita,Publia,Lita.Publia@yopmail.com,Product,10/09/2020,1,In-Progress
+109,Lita,Publia,Lita.Publia@yopmail.com,Infrastructure,10/09/2020,1,In-Progress
 110,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,01/11/2021,3,In-Progress
