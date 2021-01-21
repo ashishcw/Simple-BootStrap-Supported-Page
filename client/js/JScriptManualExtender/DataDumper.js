@@ -35,8 +35,8 @@ function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2) {
                 var csv_data = data.split(/\r?\n|\r/);                
                 //console.log(csv_data);
                 var csv_table_data = '<table class="table table-bordered table-striped">';
-                //for (var count = 0; count < csv_data.length; count++) {
-                for (var count = 0; count < 8; count++) {
+                for (var count = 0; count < csv_data.length; count++) {
+                //for (var count = 0; count < 8; count++) {
 
                     var cell_data = csv_data[count].split(",");
                     csv_table_data += '<tr>';
@@ -61,7 +61,7 @@ function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2) {
                 }
 
                 csv_table_data += '</table>';
-                $(`#${table_id}`).html(csv_table_data);
+                $(`#${table_id}`).html(csv_table_data);                
 
             }
         });

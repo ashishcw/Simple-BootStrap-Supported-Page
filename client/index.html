@@ -14,6 +14,7 @@
 
     <!-- Manual Javascript -->
     <script src="./js/JScriptManualExtender/DataDumper.js" type="text/javascript"></script>
+    <script src="./js/JScriptManualExtender/Count_Card_Handler.js" type="text/javascript"></script>
 
     <!-- Jquery -->
     <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
@@ -108,7 +109,7 @@
                                     <div class="card text-white bg-danger mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Priority 1</h3>
-                                            <p class="card-text">Total Count : 20</p>
+                                            <p class="card-text" id="priority_1_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -119,7 +120,7 @@
                                     <div class="card text-white bg-dark mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Priority 2</h3>
-                                            <p class="card-text">Total Count : 10</p>
+                                            <p class="card-text"id="priority_2_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -130,7 +131,7 @@
                                     <div class="card text-white bg-secondary mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Priority 3</h3>
-                                            <p class="card-text">Total Count : 32</p>
+                                            <p class="card-text" id="priority_3_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -141,7 +142,7 @@
                                     <div class="card text-white bg-primary mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Priority 4</h3>
-                                            <p class="card-text">Total Count : 74</p>
+                                            <p class="card-text" id="priority_4_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -202,7 +203,7 @@
                                     <div class="card text-white bg-secondary mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Open</h3>
-                                            <p class="card-text">Count : 50</p>
+                                            <p class="card-text" id="status_Open_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -213,7 +214,7 @@
                                     <div class="card text-white bg-success mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">In-Progress</h3>
-                                            <p class="card-text">Count : 27</p>
+                                            <p class="card-text" id="status_InProgress_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -224,7 +225,7 @@
                                     <div class="card text-white bg-info mb-3" style="width: 200px;">
                                         <div class="card-body">
                                             <h3 class="card-title">Closed</h3>
-                                            <p class="card-text">Count : 17</p>
+                                            <p class="card-text" id="status_Closed_Card"></p>
                                             <!-- <a href="#" class="btn btn-primary">Go</a> -->
                                         </div>
                                     </div>
@@ -286,9 +287,21 @@
 <!-- <script type="text/javascript">CustomChart()</script> -->
 <script type="text/javascript">CustomChart_Category();</script>
 
-<!-- Table Specific Scripts -->
+<!-- Priority Specific Scripts -->
 <script type="text/javascript">Table_Formation("main_table", 0, 6);</script>
+
+<script type="text/javascript">Priority_Count_Handler(1);</script>
+<script type="text/javascript">Priority_Count_Handler(2);</script>
+<script type="text/javascript">Priority_Count_Handler(3);</script>
+<script type="text/javascript">Priority_Count_Handler(4);</script>
+
+<!-- Status Specific Scripts -->
 <script type="text/javascript">Table_Formation("main_table_2", 0, 7);</script>
+<script type="text/javascript">Status_Count_Handler("Open")</script>
+<script type="text/javascript">Status_Count_Handler("Closed")</script>
+<script type="text/javascript">Status_Count_Handler("Inprogress")</script>
+
+
 
 <hr>
 <!-- Footer -->
