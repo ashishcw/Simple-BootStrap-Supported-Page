@@ -16,8 +16,7 @@ function Priority_Count_Handler(priority_Type){
 
                     for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
 
-                        if (cell_Count === 6) {
-                            //console.log(cell_data[cell_Count]);
+                        if (cell_Count === 6) {                            
                             
                             var label = cell_data[cell_Count] + '';
 
@@ -88,8 +87,7 @@ function Status_Count_Handler(Status_Type){
                     for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
 
                         if (cell_Count === 7) {
-                            console.log(cell_data[cell_Count]);
-                            
+
                             var label = cell_data[cell_Count] + '';
 
                             switch(label){
