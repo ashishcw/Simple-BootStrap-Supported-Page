@@ -2,187 +2,179 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Title</title>
-    <link rel="stylesheet" href="./css/project.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/bootstrap-table.min.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title</title>
+  <link rel="stylesheet" href="./css/project.css">
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/bootstrap-table.min.css">
 
-    <script src="./js/PapaParse/papaparse.min.js"></script>
+  <script src="./js/PapaParse/papaparse.min.js"></script>
 
-    <!-- Manual Javascript -->
-    <script src="./js/JScriptManualExtender/Aging_Table_Formation.js" type="text/javascript"></script>
+  <!-- Manual Javascript -->
+  <script src="./js/JScriptManualExtender/Aging_Table_Formation.js" type="text/javascript"></script>
 
-    <!-- Jquery -->
-    <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
+  <!-- Jquery -->
+  <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
 
-    <!-- ChartJs -->
-    <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
+  <!-- ChartJs -->
+  <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
 
 </head>
 
 <body>
 
-    <!-- navbar definition goes here -->
-    <nav class="navbar navbar-dark bg-primary">
-        <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
-        <div class="container">
-            <div class="navbar-header">
-                <div class="container-fluid-nav">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a class="navbar-brand" href="index.html">
-                                <h3>
-                                    Main Page
-                                </h3>
-                            </a>
+  <!-- navbar definition goes here -->
+  <nav class="navbar navbar-dark bg-primary">
+    <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
+    <div class="container">
+      <div class="navbar-header">
+        <div class="container-fluid-nav">
+          <ul class="nav navbar-nav">
+            <li>
+              <a class="navbar-brand" href="index.html">
+                <h3>
+                  Main Page
+                </h3>
+              </a>
 
-                            <a class="navbar-brand" href="timeline.html">
-                                <h3>
-                                    Timeline Page
-                                </h3>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <!--nabar head ends here -->
+              <a class="navbar-brand" href="timeline.html">
+                <h3>
+                  Timeline Page
+                </h3>
+              </a>
+            </li>
+          </ul>
         </div>
-
-        <!--container ends here -->
-    </nav>
-
-    <div class="wrapper container">
-
-        <div class="row">
-
-            <div class="container-table">
-                <hr>
-
-                <!-- Agingwise Table goes here -->
-                <div class="row">
-                    <div class="card-body">
-
-                        <div class="col-lg-12">
-                            <h1 class="page-header">
-                                Timeline Table
-                            </h1>
-                        </div>
-
-
-                        <div class="card_Historical_Chart">
-                            <div class="card-body">
-                                <div class="text-center">
-                                    <div id="timeline_main_table">
-                                        <table class="table">
-                                            <thead>
-                                              <tr>
-                                                <th scope="col">Aging</th>
-                                                <th scope="col">Count</th>                                                
-                                              </tr>
-                                            </thead>
-                                            <tbody>
-                                              <tr>
-                                                <td><a href="#">1 Day</a></td>
-                                                <td id="1_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">2 Days</a></td>
-                                                <td id="2_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">5 Days</a></td>
-                                                <td id="3_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">1 Week</a></td>
-                                                <td id="4_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">2 Weeks</a></td>
-                                                <td id="5_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">3 Weeks</a></td>
-                                                <td id="6_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">1 Month</a></td>
-                                                <td id="7_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">2 Months</a></td>
-                                                <td id="8_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">6 Months</a></td>
-                                                <td id="9_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">9 Months</a></td>
-                                                <td id="10_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">1 Year</a></td>
-                                                <td id="11_Count">0</td>
-                                              </tr>
-                                              <tr>
-                                                <td><a href="#">2 Years</a></td>
-                                                <td id="12_Count">0</td>
-                                              </tr>
-                                            </tbody>
-                                          </table>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
+      </div>
+      <!--nabar head ends here -->
     </div>
 
-    <!-- 
-    <div class="card_Historical_Chart">
-        <div class="card-body">
-            <div class="text-center">
-                <div id="main_table_44444"></div>                                    
-            </div>
-            <div id="main_table_44444"></div>
-        </div>
-    </div> -->
+    <!--container ends here -->
+  </nav>
 
+  <div class="wrapper container">
+
+    <div class="row">
+
+      <div class="container-table">
+        <hr>
+
+        <!-- Agingwise Table goes here -->
+        <div class="row">
+          <div class="card-body">
+
+            <div class="col-lg-12">
+              <h1 class="page-header">
+                Timeline Table
+              </h1>
+            </div>
+
+
+            <div class="card_Historical_Chart">
+              <div class="card-body">
+                <div class="text-center">
+                  <div id="timeline_main_table">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Aging</th>
+                          <th scope="col">Count</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><a href="#">1 Day</a></td>
+                          <td id="1_Day_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2 Days</a></td>
+                          <td id="2_Days_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">5 Days</a></td>
+                          <td id="3_Days_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">1 Week</a></td>
+                          <td id="1_Week_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2 Weeks</a></td>
+                          <td id="2_Weeks_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">3 Weeks</a></td>
+                          <td id="3_Weeks_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">1 Month</a></td>
+                          <td id="1_Month_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2 Months</a></td>
+                          <td id="2_Months_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">3 Months</a></td>
+                          <td id="3_Months_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">6 Months</a></td>
+                          <td id="6_Months_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">9 Months</a></td>
+                          <td id="9_Months_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">1 Year</a></td>
+                          <td id="1_Year_Count">0</td>
+                        </tr>
+                        <tr>
+                          <td><a href="#">2 Years</a></td>
+                          <td id="2_Years_Count">0</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <!-- Table Specific Scripts -->
 <!-- <script type="text/javascript">Aging_Table("timeline_main_table");</script> -->
-<script type="text/javascript">Random_Number("1_Count")</script>
-<script type="text/javascript">Random_Number("2_Count")</script>
-<script type="text/javascript">Random_Number("3_Count")</script>
-<script type="text/javascript">Random_Number("4_Count")</script>
-<script type="text/javascript">Random_Number("5_Count")</script>
-<script type="text/javascript">Random_Number("6_Count")</script>
-<script type="text/javascript">Random_Number("7_Count")</script>
-<script type="text/javascript">Random_Number("8_Count")</script>
-<script type="text/javascript">Random_Number("9_Count")</script>
-<script type="text/javascript">Random_Number("10_Count")</script>
-<script type="text/javascript">Random_Number("11_Count")</script>
-<script type="text/javascript">Random_Number("12_Count")</script>
+<script type="text/javascript">Random_Number("1_Day_Count")</script>
+<script type="text/javascript">Random_Number("2_Days_Count")</script>
+<script type="text/javascript">Random_Number("3_Days_Count")</script>
+<script type="text/javascript">Random_Number("1_Week_Count")</script>
+<script type="text/javascript">Random_Number("2_Weeks_Count")</script>
+<script type="text/javascript">Random_Number("3_Weeks_Count")</script>
+<script type="text/javascript">Random_Number("1_Month_Count")</script>
+<script type="text/javascript">Random_Number("2_Months_Count")</script>
+<script type="text/javascript">Random_Number("3_Months_Count")</script>
+<script type="text/javascript">Random_Number("6_Months_Count")</script>
+<script type="text/javascript">Random_Number("9_Months_Count")</script>
+<script type="text/javascript">Random_Number("1_Year_Count")</script>
+<script type="text/javascript">Random_Number("2_Years_Count")</script>
+
+
 
 <hr>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Ashish Rathi 2021</span>
-        </div>
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright &copy; Ashish Rathi 2021</span>
     </div>
+  </div>
 </footer>
 <!-- End of Footer -->
 

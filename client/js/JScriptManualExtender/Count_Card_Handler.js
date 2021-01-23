@@ -1,3 +1,5 @@
+const path = "js\\JScriptManualExtender\\data.csv";
+
 var Priority_1 = 0;
 var Priority_2 = 0;
 var Priority_3 = 0;
@@ -6,7 +8,7 @@ var Priority_4 = 0;
 function Priority_Count_Handler(priority_Type){
     $(document).ready(function () {
         $.ajax({
-            url: "js\\JScriptManualExtender\\data.csv",
+            url: path,
             dataType: "text",
             success: function (data) {
                 var csv_data = data.split(/\r?\n|\r/);
@@ -76,7 +78,7 @@ var Status_Closed = 0;
 function Status_Count_Handler(Status_Type){
     $(document).ready(function () {
         $.ajax({
-            url: "js\\JScriptManualExtender\\data.csv",
+            url: path,
             dataType: "text",
             success: function (data) {
                 var csv_data = data.split(/\r?\n|\r/);
