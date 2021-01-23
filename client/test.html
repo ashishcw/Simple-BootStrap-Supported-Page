@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="./css/project.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-table.min.css">
+
+    <script src="./js/PapaParse/papaparse.min.js"></script>
+
+    <!-- Manual Javascript -->
+    <script src="./js/JScriptManualExtender/DataDumper.js" type="text/javascript"></script>
+    <script src="./js/JScriptManualExtender/Count_Card_Handler.js" type="text/javascript"></script>
+
+    <!-- Jquery -->
+    <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
+
+    <!-- ChartJs -->
+    <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body>
+
+    <!-- navbar definition goes here -->
+    <nav class="navbar navbar-dark bg-primary">
+        <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
+        <div class="container">
+            <div class="navbar-header">
+                <div class="container-fluid-nav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="navbar-brand" href="index.html">
+                                <h3>
+                                    Main Page
+                                </h3>
+                            </a>
+
+                            <a class="navbar-brand" href="timeline.html">
+                                <h3>
+                                    Timeline Page
+                                </h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--nabar head ends here -->
+        </div>
+
+        <!--container ends here -->
+    </nav>
+
+    <div class="wrapper container">
+
+        <div class="row">
+
+            <div class="container-table">
+                <hr>
+                <!-- chart and Table goes here -->
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Categorical Representation
+                        </h1>
+                    </div>
+
+
+                    <div>
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <canvas id="initial_Chart_Display" width="400" height="150"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<!-- Chart related scripts -->
+<script src="./js/JScriptManualExtender/testJS.js"></script>
+<!-- <script type="text/javascript">CustomChart()</script> -->
+<script type="text/javascript">ChartDefinition();</script>
+
+<hr>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Ashish Rathi 2021</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+
+
+
+</html>

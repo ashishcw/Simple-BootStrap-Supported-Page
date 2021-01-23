@@ -1,7 +1,9 @@
+const path = "js\\JScriptManualExtender\\data.csv";
+
 function Aging_Table(table_id) {
     $(document).ready(function () {
         $.ajax({
-            url: "js\\JScriptManualExtender\\data.csv",
+            url: path,
             dataType: "text",
             success: function (data) {
                 var csv_data = data.split(/\r?\n|\r/);
@@ -24,7 +26,7 @@ function Aging_Table(table_id) {
                             // }
 
 
-                        }else if(count === 1){
+                        } else if (count === 1) {
                             //csv_table_data += '<th>' + 'Count' + '</th>';
                         }
                         else {
@@ -46,13 +48,22 @@ function Aging_Table(table_id) {
     });
 }
 
-function Random_Number(table_id){
+function Random_Number(table_id) {
     //var number = Math.floor((Math.random() * 10) + 1);
     var number = Math.floor((Math.random() * 100) + 1);
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         //$(`#${table_id}`).html('<a href="#">' + number + '</a>');
         $(`#${table_id}`).html(number);
     });
 
+}
+
+
+window.onclick = e => {
+    //console.dir(e.target);  // use this in chrome
+    //console.log(e.target);  // use this in firefox - click on tag name to view
+    if (e.target.id !== null) {
+        console.log(e.target.id);
+    }
 }
