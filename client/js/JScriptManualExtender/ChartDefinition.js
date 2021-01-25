@@ -1,3 +1,57 @@
+//var path = "js\\JScriptManualExtender\\data-temp.csv";
+
+var dict = {};
+
+//Color definition for pie chart 20 colors
+var backgroundColor = ["#0D47A1", "#FFD54F", "#2196F3", "#A16045",
+    "#8AA715", "#3943CF", "#E1BDDE", "#C743C2",
+    "#DA8A11", "#43C971", "#65DF08", "#37E8D6",
+    "#D1A4C0", "#882810", "#87603F", "#289005",
+    "#84B6E2", "#3FA5A2", "#4F58D7", "#69E4EB"];
+
+var hoverBackgroundColor = [];
+var borderColor = [];
+
+
+
+//To create the initial dictionary
+function createDictionary(data) {
+
+    var key = data.replace(" ", "");
+    if (dict[key] >= 0) {
+        dict[key] = dict[key] + 1;
+    } else {
+        dict[key] = 1;
+    }
+
+    //result
+    //key:value
+    //count: 5
+}
+
+function randomColorPick_Function(loop_time) {
+
+    for (var i = 0; i < loop_time; i++) {
+
+        //generate a random color
+
+        //var color = "rgba(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ",";
+        var color = "rgba(" + getRndInteger(0, 256) + "," + getRndInteger(0, 256) + "," + getRndInteger(0, 256) + ",";
+
+        // backgroundColor.push(color + "0.2)");
+        // hoverBackgroundColor.push(color + "0.5)");
+        // borderColor.push(color + "1)");
+
+        //backgroundColor.push(color + "0.7)");
+        hoverBackgroundColor.push(color + "0.5)");
+        borderColor.push(color + "1)");
+    }
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 var weekly_Count = 0;
 var monthly_Count = 0;
 var quarterly_Count = 0;
@@ -178,7 +232,7 @@ function Category_Wise_Data(target_data) {
     if (target_data == "Other") {
         Other_Count++;
     }
-    
+
 
     return Infrastructure_Count, Product_Count, Other_Count;
 
@@ -198,8 +252,9 @@ function CustomChart_Category() {
 
                     for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
 
-                        if (cell_Count === 4) {
-                            Category_Wise_Data(cell_data[cell_Count]);
+                        if (cell_Count === 8) {
+                            //Category_Wise_Data(cell_data[cell_Count]);
+                            createDictionary(cell_data[cell_Count]);
                         }
                     }
                 }
@@ -207,42 +262,78 @@ function CustomChart_Category() {
 
                 var canvasP = document.getElementById("initial_Chart_Display");
                 var ctxP = canvasP.getContext('2d');
+
                 var initial_Chart = new Chart(ctxP, {
                     // type: 'bar',
                     type: 'pie',
                     data: {
-                        labels: ["Infrastructure", "Product", "Other"],
+                        labels: [],
 
-                        datasets: [{
-                            // data: [10, 5, 10, 20, 50, 70, 50],
-                            //data: [weekly_Count, monthly_Count, quarterly_Count, half_Yearly_Count, yearly_Count, 7],
-                            label: ['CSV Entries'],
-                            data: [Infrastructure_Count, Product_Count, Other_Count],
-                            backgroundColor: ["#0D47A1", "#FFD54F", "#2196F3"],
-                            hoverBackgroundColor: ["#0097A7", "#FFCCBC", "#4DD0E1"]
-                            // backgroundColor: ["#64B5F6", "#FFD54F", "#2196F3", "#FFC107", "#1976D2", "#FFA000", "#0D47A1"],
-                            // hoverBackgroundColor: ["#B2EBF2", "#FFCCBC", "#4DD0E1", "#FF8A65", "#00BCD4", "#FF5722", "#0097A7"]
+                        datasets: [{                            
+                            data: [],
+                            backgroundColor: backgroundColor,
+                            //hoverBackgroundColor: ["#0097A7", "#FFCCBC", "#4DD0E1"]                            
                         }]
                     },
                     options: {
                         responsive: true,
                         legend: {
-                            display: true,
-                            //position: "right",
-                        },
-                        scales: {
-                            // yAxes: [{
-                            //     ticks: {
-                            //         beginAtZero: true
-                            //     }
-                            // }]
-                        },
+                            display: true,                            
+                        },                        
                         title: {
                             display: false,
-                            text: 'Historical Chart'
+                            text: 'Categorical Display'
                         }
                     }
                 });
+                var keys = Object.keys(dict);
+
+                for (var i = 0; i < keys.length; i++) {
+                    initial_Chart.data.labels.push([keys[i]]);
+                    randomColorPick_Function(100);
+                    initial_Chart.data.datasets.forEach((dataset) => {
+                        dataset.data.push(dict[keys[i]]);
+                        dataset.hoverBackgroundColor = (hoverBackgroundColor[getRndInteger(0, hoverBackgroundColor.length)]);
+                    });                   
+                }
+
+                initial_Chart.update();
+                // var initial_Chart = new Chart(ctxP, {
+                //     // type: 'bar',
+                //     type: 'pie',
+                //     data: {
+                //         labels: ["Infrastructure", "Product", "Other"],
+
+                //         datasets: [{
+                //             // data: [10, 5, 10, 20, 50, 70, 50],
+                //             //data: [weekly_Count, monthly_Count, quarterly_Count, half_Yearly_Count, yearly_Count, 7],
+                //             label: ['CSV Entries'],
+                //             data: [Infrastructure_Count, Product_Count, Other_Count],
+                //             backgroundColor: ["#0D47A1", "#FFD54F", "#2196F3"],
+                //             hoverBackgroundColor: ["#0097A7", "#FFCCBC", "#4DD0E1"]
+                //             // backgroundColor: ["#64B5F6", "#FFD54F", "#2196F3", "#FFC107", "#1976D2", "#FFA000", "#0D47A1"],
+                //             // hoverBackgroundColor: ["#B2EBF2", "#FFCCBC", "#4DD0E1", "#FF8A65", "#00BCD4", "#FF5722", "#0097A7"]
+                //         }]
+                //     },
+                //     options: {
+                //         responsive: true,
+                //         legend: {
+                //             display: true,
+                //             //position: "right",
+                //         },
+                //         scales: {
+                //             // yAxes: [{
+                //             //     ticks: {
+                //             //         beginAtZero: true
+                //             //     }
+                //             // }]
+                //         },
+                //         title: {
+                //             display: false,
+                //             text: 'Historical Chart'
+                //         }
+                //     }
+                // });
 
                 // canvasP.onclick = function (e) {
                 //     var slice = initial_Chart.getElementAtEvent(e);
