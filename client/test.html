@@ -82,6 +82,59 @@
                     </div>
 
                 </div>
+                
+                <hr>
+                <!-- Prioritywise Count goes here -->
+                <div class="row">
+                    <div class="card-body">
+
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Prioritywise Count
+                            </h1>
+                        </div>
+
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div id="main_table"></div>                                    
+                                </div>
+                                <div id="main_table"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <!-- Statuswise Table goes here -->
+                <div class="row">
+                    <div class="card-body">
+
+                        <div class="col-lg-12">
+                            <h1 class="page-header">
+                                Statuswise Table
+                            </h1>
+                        </div>
+
+
+                        <div class="card_Historical_Chart">
+                            <div class="card-body">
+                                <div class="text-center">
+                                    <div id="main_table_2"></div>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
             </div>
         </div>
     </div>
@@ -92,6 +145,8 @@
 <script src="./js/JScriptManualExtender/testJS.js"></script>
 <!-- <script type="text/javascript">CustomChart()</script> -->
 <script type="text/javascript">ChartDefinition();</script>
+<script type="text/javascript">Priority_Count_Table_Handler('main_table');</script>
+<script type="text/javascript">Status_Count_Table_Handler('main_table_2');</script>
 
 <hr>
 <!-- Footer -->

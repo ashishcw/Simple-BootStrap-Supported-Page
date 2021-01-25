@@ -61,8 +61,7 @@ function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2) {
                 }
 
                 csv_table_data += '</table>';
-                $(`#${table_id}`).html(csv_table_data);                
-
+                $(`#${table_id}`).html(csv_table_data);
             }
         });
     });
