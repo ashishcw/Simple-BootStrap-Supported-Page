@@ -1,5 +1,24 @@
 const path = "js\\JScriptManualExtender\\data.csv";
 
+var priority_Dict = {};
+
+function create_Priority_Dictionary(data) {
+
+    var key = data.replace(" ", "");
+    if (priority_Dict[key] >= 0) {
+        priority_Dict[key] = priority_Dict[key] + 1;
+    } else {
+        priority_Dict[key] = 1;
+    }
+
+    //result
+    //key:value
+    //count: 5
+}
+
+
+
+
 var Priority_1 = 0;
 var Priority_2 = 0;
 var Priority_3 = 0;
@@ -20,6 +39,7 @@ function Priority_Count_Handler(priority_Type){
 
                         if (cell_Count === 6) {                            
                             
+                            //create_Priority_Dictionary(cell_data[cell_Count]);
                             var label = cell_data[cell_Count] + '';
 
                             switch(label){
@@ -42,8 +62,10 @@ function Priority_Count_Handler(priority_Type){
                         }
                     }
                 }
+                console.log(priority_Dict);
                 //$(`#${table_id}`).html(csv_table_data);                
                 //$(`#priority_1_Card`).html('Total Count : ' + Priority_1);
+                
                 switch(priority_Type){
                     case 1:
                         $(`#priority_1_Card`).html('Total Count : ' + Priority_1);
