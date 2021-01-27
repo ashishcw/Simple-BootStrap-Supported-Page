@@ -34,7 +34,7 @@ function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2) {
             success: function (data) {
                 var csv_data = data.split(/\r?\n|\r/);                
                 //console.log(csv_data);
-                var csv_table_data = '<table class="table table-bordered table-striped">';
+                var csv_table_data = '<table id="example" class="table table-bordered table-striped">';
                 for (var count = 0; count < csv_data.length; count++) {
                 //for (var count = 0; count < 8; count++) {
 
