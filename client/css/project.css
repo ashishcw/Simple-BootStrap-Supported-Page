@@ -19,6 +19,25 @@ hr.rounded {
 	width: 700px;
   }
 
+.Total_Label{
+	font-size: 30px;
+	  /* color: #847bf7;	   */
+	  color: black;
+  	/* text-transform: uppercase; */
+  	font-weight: normal;
+  	line-height: 1;
+  	text-align: center;
+	  /* margin: 0px 50px 0 -50px; */
+	margin: 0px 0px 0px 0px;
+	
+	padding-top: 30px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	
+	  
+}
+
 .card_Historical_Chart{
 	width: 1100px;
 	margin: 0 auto;

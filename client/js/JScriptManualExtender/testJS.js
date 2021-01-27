@@ -170,7 +170,7 @@ function Priority_Count_Table_Handler(table_id) {
                     csv_table_data += '</tr>';
                 }
 
-                
+
                 csv_table_data += '</table>';
                 //tbl = $('#myTable').DataTable();
                 $(`#${table_id}`).html(csv_table_data);
@@ -205,7 +205,6 @@ function Status_Count_Table_Handler(table_id) {
                         }
                     }
                 }
-                console.log(status_Dict);
 
                 var keys = Object.keys(status_Dict);
 
@@ -216,7 +215,7 @@ function Status_Count_Table_Handler(table_id) {
                     csv_table_data += '</tr>';
                 }
 
-                
+
                 csv_table_data += '</table>';
                 //tbl = $('#myTable').DataTable();
                 $(`#${table_id}`).html(csv_table_data);
@@ -226,3 +225,128 @@ function Status_Count_Table_Handler(table_id) {
         });
     });
 }
+
+
+function Table_Formation(table_id, cell_Count_Field_1, cell_Count_Field_2) {
+    var thead_added = false;
+    $(document).ready(function () {
+        $.ajax({
+            url: "js\\JScriptManualExtender\\data.csv",
+            dataType: "text",
+            success: function (data) {
+                var csv_data = data.split(/\r?\n|\r/);
+                //console.log(csv_data);
+                var csv_table_data = '<table id="example3" class="table table-bordered table-striped">';
+
+                csv_table_data += '<thead>';
+                csv_table_data += '<th>';
+                csv_table_data += 'ID';
+                csv_table_data += '</th>';
+                csv_table_data += '<th>';
+                csv_table_data += 'Status';
+                csv_table_data += '</th>';
+                csv_table_data += '</thead>';
+
+                for (var count = 1; count < csv_data.length; count++) {
+                    //for (var count = 0; count < 8; count++) {
+
+                    var cell_data = csv_data[count].split(",");
+
+                    csv_table_data += '<tr>';
+
+                    for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
+
+                        if (count === 0) {
+                            if (cell_Count === cell_Count_Field_1 || cell_Count === cell_Count_Field_2) {
+                                // csv_table_data += '<th>' + cell_data[cell_Count] + '</th>';
+                            }
+
+                        } else {
+
+                            if (cell_Count === cell_Count_Field_1 || cell_Count === cell_Count_Field_2) {
+                                csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+                            }
+                            //csv_table_data += '<td>' + cell_data[cell_Count] + '</td>';
+
+                        }
+                    }
+                    csv_table_data += '</tr>';
+                }
+
+
+
+                csv_table_data += '</table>';
+                $(`#${table_id}`).html(csv_table_data);
+            }
+        });
+    });
+
+}
+
+function Merge_Count_Table_Handler(table_id) {
+    $(document).ready(function () {
+        $.ajax({
+            url: path,
+            dataType: "text",
+            success: function (data) {
+                var csv_data = data.split(/\r?\n|\r/);
+                //var csv_table_data = '<table id="example" class="table table-bordered table-striped">';
+                var csv_table_data = '<table id="example" class="table table-striped table-bordered" style="width:100%">';
+                for (var count = 1; count < csv_data.length; count++) {
+
+                    var cell_data = csv_data[count].split(",");
+
+                    csv_table_data += '<tr>';
+
+                    for (var cell_Count = 0; cell_Count < cell_data.length; cell_Count++) {
+
+                        if (cell_Count === 6) {
+                            //Category_Wise_Data(cell_data[cell_Count]);
+                            //console.log(cell_data[cell_Count]);
+                            createDictionary(priority_Dict, cell_data[cell_Count]);
+                        }
+
+                        if (cell_Count === 7) {
+                            //Category_Wise_Data(cell_data[cell_Count]);
+                            //console.log(cell_data[cell_Count]);
+                            createDictionary(status_Dict, cell_data[cell_Count]);
+                        }
+                    }
+                }
+
+                var status_Keys = Object.keys(status_Dict);
+                var priority_Keys = Object.keys(priority_Dict);
+
+                csv_table_data += '<th>' + 'Status' + '</th>';
+
+                for (var i = 0; i < priority_Keys.length; i++) {
+                    // initial_Chart.data.labels.push([keys[i]]);
+
+                    csv_table_data += '<th>' + [priority_Keys[i]] + '</th>';
+                    // csv_table_data += '<td>' + [keys[i]] + '</td>';
+                    // csv_table_data += '<td>' + status_Dict[keys[i]] + '</td>';
+                    // csv_table_data += '</tr>';
+                }
+
+                for (var i = 0; i < status_Keys.length; i++) {
+                    // initial_Chart.data.labels.push([keys[i]]);
+
+                    csv_table_data += '</tr>';
+                    csv_table_data += '<td>' + [status_Keys[i]] + '</td>';
+                    // csv_table_data += '<td>' + [keys[i]] + '</td>';
+                    // csv_table_data += '<td>' + status_Dict[keys[i]] + '</td>';
+
+                }
+
+
+                csv_table_data += '</table>';
+                //tbl = $('#myTable').DataTable();
+
+                $(`#${table_id}`).html((csv_table_data));
+
+
+            }
+        });
+    });
+}
+
