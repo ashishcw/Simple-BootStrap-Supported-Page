@@ -284,31 +284,7 @@
     });
 </script> -->
 
-<script type="text/javascript">
-    $.get('js\\JScriptManualExtender\\data.csv', function (csv) {
-        var data = $.csv.toArrays(csv),
-            columns = [];
 
-        //create the columns object
-        data[0].forEach(function (col) {
-            columns.push({ title: col });
-        })
-
-        //remove the CSV header row for convenience 
-        data.splice(0, 1);
-
-        //create the dataTable
-        var table = $('#example3').DataTable({
-            columns: columns
-        })
-
-        //insert rows
-        data.forEach(function (row) {
-            table.row.add(row).draw();
-        })
-
-    })
-</script>
 
 
 <hr>

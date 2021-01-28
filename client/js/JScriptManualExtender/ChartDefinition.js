@@ -23,7 +23,6 @@ function createDictionary(data) {
     } else {
         dict[key] = 1;
     }
-
     //result
     //key:value
     //count: 5
@@ -72,6 +71,7 @@ function CustomChart_Category() {
                         }
                     }
                 }
+                
 
 
                 Chart.pluginService.register({
