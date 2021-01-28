@@ -1,12 +1,18 @@
-ID,First-Name,Last-Name,Email,Category,DOB,Priority,Status,Category/SubCategory
-100,Alameda,Haymes,Alameda.Haymes@yopmail.com,Infrastructure,12/27/2020,High,Open,Product
-101,Jobi,Willie,Jobi.Willie@yopmail.com,Product,01/15/2021,Low,Open,Infrastructure
-102,Dorthy,Frendel,Dorthy.Frendel@yopmail.com,Infrastructure,04/16/1977,Low,Closed,Services
-103,Kalina,Kronfeld,Kalina.Kronfeld@yopmail.com,Infrastructure,02/26/1960,Low,Open,Product
-104,Romona,Pearse,Romona.Pearse@yopmail.com,Product,01/12/1987,Medium,Closed,Product
-105,Gerrie,Friede,Gerrie.Friede@yopmail.com,Other,07/12/1969,New,In-Progress,Product
-106,Ellette,Cassius,Ellette.Cassius@yopmail.com,Infrastructure,11/14/1973,High,Open,Infrastructure
-107,Rivalee,Yuille,Rivalee.Yuille@yopmail.com,Product,03/15/2020,Low,In-Progress,Platform
-108,Kore,Cecile,Kore.Cecile@yopmail.com,Product,06/28/1997,Medium,Closed,Infrastructure
-109,Lita,Publia,Lita.Publia@yopmail.com,Infrastructure,10/09/2020,High,In-Progress,Platform
-110,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,01/27/2021,Medium,In-Progress,Platform
+ID,First-Name,Last-Name,Email,Category,TimeLine,DOB,Priority,Status,Category/SubCategory
+100,Alameda,Haymes,Alameda.Haymes@yopmail.com,Infrastructure,2 Days,12/27/2020,High,Open,Product
+101,Jobi,Willie,Jobi.Willie@yopmail.com,Product,3 Days,01/15/2021,Low,Open,Infrastructure
+102,Dorthy,Frendel,Dorthy.Frendel@yopmail.com,Infrastructure,1 Day,04/16/1977,Low,Closed,Services
+103,Kalina,Kronfeld,Kalina.Kronfeld@yopmail.com,Infrastructure,1 Week,02/26/1960,Low,Open,Product
+104,Romona,Pearse,Romona.Pearse@yopmail.com,Product,3 Weeks,01/12/1987,Medium,Closed,Product
+105,Gerrie,Friede,Gerrie.Friede@yopmail.com,Other,4 Weeks,07/12/1969,New,In-Progress,Product
+106,Ellette,Cassius,Ellette.Cassius@yopmail.com,Infrastructure,5 Days,11/14/1973,High,Open,Infrastructure
+107,Rivalee,Yuille,Rivalee.Yuille@yopmail.com,Product,3 Weeks,03/15/2020,Low,In-Progress,Platform
+108,Kore,Cecile,Kore.Cecile@yopmail.com,Product,1 Week,06/28/1997,Medium,Closed,Infrastructure
+109,Lita,Publia,Lita.Publia@yopmail.com,Infrastructure,2 Weeks,10/09/2020,High,In-Progress,Platform
+110,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,1 Week,01/27/2021,Medium,In-Progress,Platform
+111,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,1 Week,01/27/2021,Medium,In-Progress,Platform
+112,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,1 Week,01/27/2021,Medium,In-Progress,Platform
+113,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Product,1 Week,01/27/2021,Medium,In-Progress,Platform
+114,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Infrastructure,2 Days,01/27/2021,Medium,In-Progress,Infrastructure
+114,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Infrastructure,2 Years,01/27/2021,Medium,In-Progress,Product
+114,Katharina,Hepsibah,Katharina.Hepsibah@yopmail.com,Infrastructure,2 Years,01/27/2021,Medium,Closed,Product
