@@ -10,6 +10,7 @@ const product_Name_Dict_2 = {};
 const product_Name_Dict_Final = {};
 
 const array_1 = [];
+const Extended_Table_Header_Row = [];
 
 function create_Initial_Empty_Dictionary(dict, data) {
     if (typeof (data) === undefined) {
@@ -111,13 +112,18 @@ $(document).ready(function () {
         dynamicTyping: true,
         complete: function (results) {
 
+            results.data.forEach((item, index) => {
+                Extended_Table_Header_Row.push(item);
+            });
+
+            //console.log(col[0]);
+
 
             //console.log(results.data.length);
             //fetching all the entries which doesn't have a status as closed            
             for (var i = 1; i < results.data.length; i++) {
 
-                //Creating a dictionary on the basis of product names
-                //console.log(results.data[i][8]);
+                //Creating a dictionary on the basis of product names                
                 createDictionary(product_Name_Dict, results.data[i][9]);
             }
 
@@ -146,97 +152,71 @@ $(document).ready(function () {
                 var key = '_';
                 switch (item[5]) {
                     case timeLines[1]://'1 Day':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[1]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[1]);
                         //console.log(item[8]+key+timeLines_internal[1]);
-                    break;
+                        break;
 
                     case timeLines[2]://'2 Days':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[2]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[2]);
                         //console.log(item[8]+key+timeLines_internal[2]);
-                    break;
+                        break;
 
                     case timeLines[3]://'5 Days':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[3]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[3]);
                         //console.log(item[8]+key+timeLines_internal[3]);
-                    break;
+                        break;
 
                     case timeLines[4]://'1 Week':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[4]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[4]);
                         //console.log(item[8]+key+timeLines_internal[4]);
-                    break;
+                        break;
 
                     case timeLines[5]://'2 Weeks':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[5]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[5]);
                         //console.log(item[8]+key+timeLines_internal[5]);
-                    break;
+                        break;
 
                     case timeLines[6]://'3 Weeks':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[6]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[6]);
                         //console.log(item[8]+key+timeLines_internal[6]);
-                    break;
+                        break;
 
                     case timeLines[7]://'1 Month':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[7]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[7]);
                         //console.log(item[8]+key+timeLines_internal[7]);
-                    break;
+                        break;
 
                     case timeLines[8]://'2 Months':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[8]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[8]);
                         //console.log(item[8]+key+timeLines_internal[8]);
-                    break;
+                        break;
 
                     case timeLines[9]://'3 Months':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[9]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[9]);
                         //console.log(item[8]+key+timeLines_internal[9]);
-                    break;
+                        break;
 
                     case timeLines[10]://'6 Months':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[10]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[10]);
                         //console.log(item[8]+key+timeLines_internal[10]);
-                    break;
+                        break;
 
                     case timeLines[11]://'9 Months':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[11]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[11]);
                         //console.log(item[8]+key+timeLines_internal[11]);
-                    break;
+                        break;
 
                     case timeLines[12]://'1 Year':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[12]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[12]);
                         //console.log(item[8]+key+timeLines_internal[12]);
-                    break;
+                        break;
 
                     case timeLines[13]://'2 Years':
-                        createDictionary(product_Name_Dict_2, item[9]+key+timeLines_internal[13]);
+                        createDictionary(product_Name_Dict_2, item[9] + key + timeLines_internal[13]);
                         //console.log(item[8]+key+timeLines_internal[13]);
-                    break;
+                        break;
                 }
                 //console.log(item[5]);
-            });
-
-            //console.log(product_Name_Dict_2);
-
-            //console.log(product_Name_Dict_2);
-            //console.log(array_1);
-
-            array_1.forEach((item, index) => {
-                //CompareDate(item[8], item[6]);
-            });
-
-            results.data.map((data, index) => {
-                if (index > 0) {
-                    if (data[7] !== 'Closed') {
-                        //console.log(data[8]);
-                    }
-                }
-
-                if (index === 0) {
-                    //generate_Table_Head(table, data);
-                    //generate_Table_Head(table, timeLines);
-                } else {
-                    //generate_Table_Rows(table, data);
-
-                    //generate_Table_Head(table, keys);
-                }
             });
 
             Tabel_Creation_From_Scratch();
@@ -274,8 +254,7 @@ function Tabel_Creation_From_Scratch() {
         csv_table_data += `<td id="${[keys[i]]}_Row">` + [keys[i]] + '</td>';
 
         for (var x = 1; x < timeLines.length; x++) {
-            csv_table_data += `<td><a id=${[keys[i]]}_${[timeLines_internal[x]]} href="#">` + 150 + '</a></td>';
-
+            csv_table_data += `<td><a id=${[keys[i]]}_${[timeLines_internal[x]]} href="#jump">` + 150 + '</a></td>';
         }
 
         csv_table_data += '</tr>';
@@ -285,12 +264,12 @@ function Tabel_Creation_From_Scratch() {
 
     $(`#main_table_3`).html((csv_table_data));
 
-    //console.log(product_Name_Dict_2);
+    //console.log(product_Name_Dict_2);    
 
     var keys_2 = Object.keys(product_Name_Dict_2);
 
     for (var i = 0; i < keys_2.length; i++) {
-        if(keys_2[i]){
+        if (keys_2[i]) {
             //console.log(keys_2[i]);
             document.getElementById(keys_2[i]).innerHTML = [product_Name_Dict_2[keys_2[i]]];
         }
@@ -301,18 +280,79 @@ function Tabel_Creation_From_Scratch() {
 
 window.onclick = e => {
 
-    if (e.target.id !== null) {
-        console.log(e.target.id);
+    if (e.target.id) {
+        //console.log(e.target.id);
 
-        var keys_2 = Object.keys(product_Name_Dict_2);
+        if (document.getElementById(e.target.id).innerHTML > 0) {
+            var keys_2 = Object.keys(product_Name_Dict_2);
 
-        if (keys_2.includes(e.target.id)) {
-            var id = e.target.id;
-            // for (var i = 0; i < keys_2.length; i++) {
-            //     document.getElementById(e.target.id).innerHTML = [product_Name_Dict_2[keys_2[i]]];
-            // }
+            if (keys_2.includes(e.target.id)) {
+                var target_Search = e.target.id;
+                target_Search = target_Search.split("_", 3);
+                //console.log(target_Search[1] + ' ' + target_Search[2]);
+
+                var csv_table_data_1 = '<table id="example" class="table table-striped table-bordered" style="width:100%">';
+                // csv_table_data_1 += '<tr>';
+                // csv_table_data_1 += `<th>` + Extended_Table_Header_Row[0] + '</th>';
+                // csv_table_data_1 += '</tr>';
+
+
+
+                csv_table_data_1 += '<tr>';
+                Extended_Table_Header_Row[0].forEach((item, index) => {
+                    
+                    csv_table_data_1 += `<th>` + item + '</th>';
+                    
+                });
+                csv_table_data_1 += '</tr>';
+
+
+                
+                array_1.forEach((item, index) => {
+                    if (item[5] === (target_Search[1] + ' ' + target_Search[2]) && item[9] === target_Search[0]) {
+                
+                        csv_table_data_1 += '<tr>';
+                        for(var i = 0; i < item.length; i++){
+                            csv_table_data_1 += `<td>` + item[i] + '</td>';
+                        }
+                        csv_table_data_1 += '</tr>';
+                        
+                        
+                    }
+                });
+                
+
+
+                csv_table_data_1 += '</table>';
+
+                $(`#main_table_4`).html((csv_table_data_1));
+
+                Table_State_Toggle('Hidden_Table', true);
+
+
+            } else {
+                //console.log(product_Name_Dict_2);
+            }
         } else {
-            //console.log(product_Name_Dict_2);
+            Table_State_Toggle('Hidden_Table', false);
+            document.getElementById(e.target.id).href = '#';
         }
     }
+}
+
+function Table_State_Toggle(table_id, show) {
+
+    if (show) {
+        if (document.getElementById(`${table_id}`).style.display === "none") {
+            document.getElementById(`${table_id}`).style.display = "block";
+        }
+    }
+    else {
+        if (document.getElementById(`${table_id}`).style.display !== "none") {
+            document.getElementById(`${table_id}`).style.display = "none";
+        }
+
+    }
+
+    console.log(Extended_Table_Header_Row[0]);
 }
