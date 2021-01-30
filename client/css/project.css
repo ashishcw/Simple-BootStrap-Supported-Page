@@ -45,6 +45,14 @@ hr.rounded {
 	margin-bottom: 10px;
 }
 
+.extended_Table{
+	width: 1100px;
+	margin: 0 auto;
+	float: none;
+	margin-bottom: 10px;
+	margin-left: -50px;
+}
+
 .container-table{
 	margin-top: 20px;	
 }
@@ -62,6 +70,115 @@ hr.rounded {
 .container-fluid-nav{
 	display: flex;
 	justify-content: space-around;
+}
+
+th#One_Day_Column
+{
+	background-color:darkgray; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(2){
+	background-color:darkgray; color:white;	
+}
+
+/* a[id*="_1_Day"]
+{
+	background-color:green; color:white;
+} */
+
+th#Two_Days_Column
+{
+	background-color:darkgray; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(3){
+	background-color:darkgray; color:white;	
+}
+
+th#Five_Days_Column
+{
+	background-color:darkgray; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(4){
+	background-color:darkgray; color:white;	
+}
+
+th#One_Week_Column
+{
+	background-color:burlywood; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(5){
+	background-color:burlywood; color:white;	
+}
+
+th#Two_Weeks_Column
+{
+	background-color:burlywood; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(6){
+	background-color:burlywood; color:white;	
+}
+
+th#Three_Weeks_Column
+{
+	background-color:burlywood; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(7){
+	background-color:burlywood; color:white;	
+}
+
+th#One_Month_Column
+{
+	background-color:darkolivegreen; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(8){
+	background-color:darkolivegreen; color:white;
+}
+
+th#Two_Months_Column
+{
+	background-color:darkolivegreen; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(9){
+	background-color:darkolivegreen; color:white;
+}
+
+th#Three_Months_Column
+{
+	background-color:darkolivegreen; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(10){
+	background-color:darkolivegreen; color:white;
+}
+
+th#Six_Months_Column
+{
+	background-color:firebrick; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(11){
+	background-color:firebrick; color:white;
+}
+
+th#Nine_Months_Column
+{
+	background-color:firebrick; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(12){
+	background-color:firebrick; color:white;
+}
+
+th#One_Year_Column
+{
+	background-color:firebrick; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(13){
+	background-color:firebrick; color:white;
+}
+
+th#Two_Years_Column
+{
+	background-color:firebrick; color:white;
+}
+table#target_data_table > tbody > tr > td:nth-child(14){
+	background-color:firebrick; color:white;
 }
 
 .select,
