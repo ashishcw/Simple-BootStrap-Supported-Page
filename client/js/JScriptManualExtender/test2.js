@@ -1,5 +1,6 @@
 const table = document.getElementById('tbl-data');
 var timeLines = ['#', '1 Day', '2 Days', '5 Days', '1 Week', '2 Weeks', '3 Weeks', '1 Month', '2 Months', '3 Months', '6 Months', '9 Months', '1 Year', '2 Years'];
+var timeLines_Character = ['#', 'One_Day', 'Two_Days', 'Five_Days', 'One_Week', 'Two_Weeks', 'Three_Weeks', 'One_Month', 'Two_Months', 'Three_Months', 'Six_Months', 'Nine_Months', 'One_Year', 'Two_Years'];
 var timeLines_internal = ['#', '1_Day', '2_Days', '5_Days', '1_Week', '2_Weeks', '3_Weeks', '1_Month', '2_Months', '3_Months', '6_Months', '9_Months', '1_Year', '2_Years'];
 
 
@@ -12,6 +13,8 @@ const product_Name_Dict_Final = {};
 const array_1 = [];
 const Extended_Table_Header_Row = [];
 
+var data_Table;
+
 function create_Initial_Empty_Dictionary(dict, data) {
     if (typeof (data) === undefined) {
     } else {
@@ -20,7 +23,7 @@ function create_Initial_Empty_Dictionary(dict, data) {
         if (dict[key] >= 0) {
             //dict[key] = dict[key] + 1;
         } else {
-            dict[key] = 0;
+            dict[key] = '-';
         }
         return dict;
     }
@@ -227,14 +230,19 @@ $(document).ready(function () {
 function Tabel_Creation_From_Scratch() {
     //console.log(product_Name_Dict_2);
 
-    var csv_table_data = '<table id="example" class="table table-striped table-bordered" style="width:100%">';
+    var csv_table_data = '<table id="target_data_table" class="table table-striped table-bordered" style="width:100%">';
     csv_table_data += '<tr>';
 
     // csv_table_data += '<th>' + '#' + '</th>';
 
 
-    for (var i = 0; i < timeLines.length; i++) {
-        csv_table_data += `<th id="${[timeLines[i]]}_Column">` + [timeLines[i]] + '</th>';
+    // for (var i = 0; i < timeLines.length; i++) {
+    //     csv_table_data += `<th id="${[timeLines[i]]}_Column">` + [timeLines[i]] + '</th>';
+    // }
+
+    for (var i = 0; i < timeLines_Character.length; i++) {
+        //csv_table_data += `<th id="${[timeLines[i]]}_Column">` + [timeLines[i]] + '</th>';
+        csv_table_data += `<th id="${[timeLines_Character[i]]}_Column">` + [timeLines[i]] + '</th>';
     }
 
     csv_table_data += '</tr>';
@@ -254,7 +262,7 @@ function Tabel_Creation_From_Scratch() {
         csv_table_data += `<td id="${[keys[i]]}_Row">` + [keys[i]] + '</td>';
 
         for (var x = 1; x < timeLines.length; x++) {
-            csv_table_data += `<td><a id=${[keys[i]]}_${[timeLines_internal[x]]} href="#jump">` + 150 + '</a></td>';
+            csv_table_data += `<td><a id=${[keys[i]]}_${[timeLines_internal[x]]} href="#extended_Table">` + 150 + '</a></td>';
         }
 
         csv_table_data += '</tr>';
@@ -278,12 +286,15 @@ function Tabel_Creation_From_Scratch() {
 
 
 
+
+
+
 window.onclick = e => {
 
     if (e.target.id) {
         //console.log(e.target.id);
 
-        if (document.getElementById(e.target.id).innerHTML > 0) {
+        if (document.getElementById(e.target.id).innerHTML != '-') {
             var keys_2 = Object.keys(product_Name_Dict_2);
 
             if (keys_2.includes(e.target.id)) {
@@ -291,41 +302,49 @@ window.onclick = e => {
                 target_Search = target_Search.split("_", 3);
                 //console.log(target_Search[1] + ' ' + target_Search[2]);
 
-                var csv_table_data_1 = '<table id="example" class="table table-striped table-bordered" style="width:100%">';
+                var csv_table_data_1 = '';
+
+                
                 // csv_table_data_1 += '<tr>';
                 // csv_table_data_1 += `<th>` + Extended_Table_Header_Row[0] + '</th>';
                 // csv_table_data_1 += '</tr>';
 
 
 
-                csv_table_data_1 += '<tr>';
+                csv_table_data_1 += '<thead><tr>';
+                
+                
                 Extended_Table_Header_Row[0].forEach((item, index) => {
                     
                     csv_table_data_1 += `<th>` + item + '</th>';
-                    
                 });
-                csv_table_data_1 += '</tr>';
+                csv_table_data_1 += '</tr></thead>';
 
-
+                csv_table_data_1 += '<tbody>';
+                
                 
                 array_1.forEach((item, index) => {
                     if (item[5] === (target_Search[1] + ' ' + target_Search[2]) && item[9] === target_Search[0]) {
                 
                         csv_table_data_1 += '<tr>';
+                        
                         for(var i = 0; i < item.length; i++){
                             csv_table_data_1 += `<td>` + item[i] + '</td>';
+                            
                         }
                         csv_table_data_1 += '</tr>';
                         
-                        
                     }
                 });
+
+                csv_table_data_1 += '</tbody>';                
                 
-
-
-                csv_table_data_1 += '</table>';
-
-                $(`#main_table_4`).html((csv_table_data_1));
+                
+                $('#main_table_4').html((csv_table_data_1));                
+                
+                //$('#main_table_4').DataTable();
+                //table.draw();
+                load_Data_Table($('#main_table_4'));
 
                 Table_State_Toggle('Hidden_Table', true);
 
@@ -338,6 +357,14 @@ window.onclick = e => {
             document.getElementById(e.target.id).href = '#';
         }
     }
+}
+
+function load_Data_Table(data){
+    if(data_Table){
+        data_Table.clear();
+    }
+    data_Table = data.DataTable();
+    data_Table.draw();
 }
 
 function Table_State_Toggle(table_id, show) {
@@ -354,5 +381,5 @@ function Table_State_Toggle(table_id, show) {
 
     }
 
-    console.log(Extended_Table_Header_Row[0]);
+    //console.log(Extended_Table_Header_Row[0]);
 }
