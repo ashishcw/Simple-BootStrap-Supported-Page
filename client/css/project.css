@@ -181,6 +181,10 @@ table#target_data_table > tbody > tr > td:nth-child(14){
 	background-color:firebrick; color:white;
 }
 
+/* table#target_data_table > tbody > tr > td:nth-child(14){
+	background-color:firebrick; color:white;
+} */
+
 .select,
   #locale {
     width: 100%;
