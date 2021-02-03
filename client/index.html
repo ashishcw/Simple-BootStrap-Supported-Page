@@ -298,11 +298,12 @@
 
 <!-- Chart related scripts -->
 <script src="./js/JScriptManualExtender/ChartDefinition.js"></script>
+
 <!-- <script type="text/javascript">CustomChart()</script> -->
 <script type="text/javascript">CustomChart_Category();</script>
 
 <!-- Priority Specific Scripts -->
-<script type="text/javascript">Table_Formation("main_table", 0, 6);</script>
+<!-- <script type="text/javascript">Table_Formation("main_table", 0, 6);</script> -->
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -316,13 +317,14 @@
 <script type="text/javascript">Priority_Count_Handler(4);</script>
 
 <!-- Status Specific Scripts -->
-<script type="text/javascript">Table_Formation("main_table_2", 0, 7);</script>
+<!-- <script type="text/javascript">Table_Formation("main_table_2", 0, 7);</script> -->
 <script type="text/javascript">Status_Count_Handler("Open")</script>
 <script type="text/javascript">Status_Count_Handler("Closed")</script>
 <script type="text/javascript">Status_Count_Handler("Inprogress")</script>
 
-
-
+<!-- New Table Handler -->
+<script src="./js/JScriptManualExtender/table_handler_Main_Page.js"></script>
+<script type="text/javascript">Table_Load()</script>
 <hr>
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
