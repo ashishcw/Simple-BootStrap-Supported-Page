@@ -62,7 +62,7 @@ function Priority_Count_Handler(priority_Type){
                         }
                     }
                 }
-                console.log(priority_Dict);
+                //console.log(priority_Dict);
                 //$(`#${table_id}`).html(csv_table_data);                
                 //$(`#priority_1_Card`).html('Total Count : ' + Priority_1);
                 
