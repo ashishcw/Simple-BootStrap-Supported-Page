@@ -56,28 +56,35 @@
         </a>
 
         <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
-        <div class="container">
-            <div class="navbar-header">
-                <div class="container-fluid-nav">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a class="navbar-brand" href="index.html">
-                                <h3>
-                                    Main Page
-                                </h3>
-                            </a>
-
-                            <a class="navbar-brand" href="timeline.html">
-                                <h3>
-                                    Timeline Page
-                                </h3>
-                            </a>
-                        </li>
-                    </ul>
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="container-fluid-nav">
+                        <ul class="nav navbar-nav">
+                            <li>
+                                <a class="navbar-brand" href="index.html">
+                                    <h3>
+                                        Main Page
+                                    </h3>
+                                </a>
+    
+                                <a class="navbar-brand" href="timeline.html">
+                                    <h3>
+                                        Timeline Page
+                                    </h3>
+                                </a>
+    
+                                <a class="navbar-brand" href="reports.html">
+                                    <h3>
+                                        Reports Page
+                                    </h3>
+                                </a>
+    
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                <!--nabar head ends here -->
             </div>
-            <!--nabar head ends here -->
-        </div>
 
         <!--container ends here -->
     </nav>
@@ -98,18 +105,21 @@
                     </div>
 
 
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="input-group-prepend">
-                                <!-- <button style="font-size:18px" id="toggle" class="input-group-text">Select From Date. <i class="fa fa-calendar"></i></button> -->
-                                <h4>Select From Date <i class="fa fa-calendar"></i></h4>
-                                <h4 style="margin-left: 50px;">Select To Date <i class="fa fa-calendar"></i></h4>
-                            </div>
-                            <input type="text" id="datepicker_From" placeholder="pick a date">
-                            <input type="text" id="datepicker_To" style="margin-left: 70px;" placeholder="pick a date">
-                            <button type="button" class="btn btn-primary" id="Go_Button">Go</button>
-                        </div>
+                    <div class="col-sm-3" style="margin-left: 30%;">                        
+                        <h4>From Date <i class="fa fa-calendar"></i></h4>
+                        <input type="text" id="datepicker_From" placeholder="pick a date">
                     </div>
+
+                    <div class="col-sm-3">
+                        <h4>To Date <i class="fa fa-calendar"></i></h4>
+                        <input type="text" id="datepicker_To" placeholder="pick a date">
+                        <button type="button" class="btn btn-primary" id="Go_Button">Go</button>
+                    </div>
+
+                    <!-- <div class="col-sm-6" style="margin-left: 40%;">
+                        <button type="button" class="btn btn-primary" id="Go_Button">Go</button>
+                    </div> -->
+                        
 
                     <div>
                         <div class="card_Historical_Chart">
@@ -211,7 +221,7 @@
                         <div class="card_Historical_Chart">
                             <div class="card-body">
                                 <div class="text-center">
-                                    <div id="main_table"></div>
+                                    <div id="main_table"></div>                                    
                                 </div>
                             </div>
                         </div>
