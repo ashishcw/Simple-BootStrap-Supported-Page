@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title</title>
+    <link rel="stylesheet" href="./css/project.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="./css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="./css/Datepicker/jquery.datetimepicker.min.css">
+
+    <!-- Jquery -->
+    <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/PapaParse/papaparse.min.js"></script>
+
+
+    <!-- bootstrap -->
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    <script src="./js/bootstrap/popper.min.js"></script>
+
+    <!-- ChartJs -->
+    <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
+
+    <!-- DataTables -->
+    <script src="./js/jquery/DataTables/jquery-3.5.1.js" type="text/javascript"></script>
+    <script src="./js/jquery/DataTables/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="./js/jquery/DataTables/dataTables.bootstrap4.min.js" type="text/javascript"></script>
+
+
+    <!-- Datetime picker -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" type="text/javascript"></script> -->
+    <script src="./js/DatePicker/jquery.datetimepicker.full.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+<body>
+
+    <!-- navbar definition goes here -->
+    <nav class="navbar navbar-dark bg-primary">
+        <a href="index.html">
+            <img src="./img/icosss.png" alt="" height="50px" width="50px">
+        </a>
+
+        <!-- <nav class="navbar navbar-dark bg-primary" role="navigation"> -->
+        <div class="container">
+            <div class="navbar-header">
+                <div class="container-fluid-nav">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a class="navbar-brand" href="index.html">
+                                <h3>
+                                    Main Page
+                                </h3>
+                            </a>
+
+                            <a class="navbar-brand" href="timeline.html">
+                                <h3>
+                                    Timeline Page
+                                </h3>
+                            </a>
+
+                            <a class="navbar-brand" href="reports.html">
+                                <h3>
+                                    Reports Page
+                                </h3>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--nabar head ends here -->
+        </div>
+
+        <!--container ends here -->
+    </nav>
+
+    <div class="wrapper container">
+
+        <div class="row">
+
+            <div class="container-table">
+                <hr>
+                <!-- chart and Table goes here -->
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Reports Page
+                        </h1>
+                        <div style="text-align: center;">
+                            <p>
+                                This page helps you download the report. The reports can be modified and downloaded as
+                                per your preferences. Furthermore, There are 3 options available to download the report.
+                            <p></p>
+                            You can click each section to learn more.
+                            </p>
+                        </div>
+
+                        <div class="accordion" id="accordion_Parent_Component">
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse"
+                                            data-target="#report_One" aria-expanded="false" aria-controls="report_One">
+                                            Download Report with Date Range
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="report_One" class="collapse" aria-labelledby="headingOne"
+                                    data-parent="#accordion_Parent_Component">
+                                    <div class="card-body">
+
+                                        You can filter report output to a specific date range.
+                                        Click the date range field to set a range of date you want for report data to be
+                                        generated. You can query a report only for the period in which data has been
+                                        available for its metrics and dimensions.
+
+                                        <p></p>
+
+                                        <div class=".col-xl-6" style="margin-left: 30%;">
+                                            <div class="form-group">
+                                                <div class="input-group-prepend">
+                                                    <!-- <button style="font-size:18px" id="toggle" class="input-group-text">Select From Date. <i class="fa fa-calendar"></i></button> -->
+                                                    <h4>Select From Date <i class="fa fa-calendar"></i></h4>
+                                                    <h4 style="margin-left: 50px;">Select To Date <i
+                                                            class="fa fa-calendar"></i></h4>
+                                                </div>
+                                                <input type="text" id="datepicker_From" placeholder="pick a date">
+                                                <input type="text" id="datepicker_To" style="margin-left: 70px;"
+                                                    placeholder="pick a date">
+                                                <button type="button" class="btn btn-primary" id="Go_Button"
+                                                    style="margin-left: 30px;">Go</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseTwo" aria-expanded="false"
+                                            aria-controls="collapseTwo">
+                                            Collapsible Group Item #2
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                    data-parent="#accordion_Parent_Component">
+                                    <div class="card-body">
+
+                                        You can filter report output to a specific date range.
+                                        Click the date range field to set a range of date you want for report data to be
+                                        generated. You can query a report only for the period in which data has been
+                                        available for its metrics and dimensions.
+
+                                        <p></p>
+
+                                        <div class=".col-xl-6" style="margin-left: 30%;">
+                                            <div class="form-group">
+                                                <div class="input-group-prepend">
+                                                    <!-- <button style="font-size:18px" id="toggle" class="input-group-text">Select From Date. <i class="fa fa-calendar"></i></button> -->
+                                                    <h4>Select From Date <i class="fa fa-calendar"></i></h4>
+                                                    <h4 style="margin-left: 50px;">Select To Date <i
+                                                            class="fa fa-calendar"></i></h4>
+                                                </div>
+                                                <input type="text" id="datepicker_From" placeholder="pick a date">
+                                                <input type="text" id="datepicker_To" style="margin-left: 70px;"
+                                                    placeholder="pick a date">
+                                                <button type="button" class="btn btn-primary" id="Go_Button"
+                                                    style="margin-left: 30px;">Go</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                            data-target="#collapseThree" aria-expanded="false"
+                                            aria-controls="collapseThree">
+                                            Download Raw Report
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                    data-parent="#accordion_Parent_Component">
+                                    <div class="card-body">
+                                        This section helps you download the raw data report.
+                                        Raw data report will be the complete report without any segmentations or any
+                                        filterations applied to it. It will download the entire report AS-IS format.
+                                        This is more useful, incase if you wish to have the access to all the datasets
+                                        available.
+
+                                        <p></p>
+
+                                        <div class=".col-xl-6" style="margin-left: 30%;">
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-primary" id="Go_Button"
+                                                    style="margin-left: 25%;">Download</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <hr>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<hr>
+
+
+<!-- Datetime picker script -->
+<script type="text/javascript">
+    // jQuery.datetimepicker.setLocale('id')
+    $('#datepicker_From').datetimepicker({
+        timepicker: false,
+        datepicker: true,
+        format: 'd/m/Y',
+        yearStart: 2018
+    });
+    $('#toggle').on('click', function () {
+        $('#datepicker_From').datetimepicker('toggle');
+    });
+</script>
+
+<script>
+    $('#datepicker_To').datetimepicker({
+        timepicker: false,
+        datepicker: true,
+        format: 'd/m/Y',
+        yearStart: 2018
+    });
+    $('#toggle_TO').on('click', function () {
+        $('#datepicker_To').datetimepicker('toggle_TO');
+        var text = document.getElementById('datepicker_From').value;
+        // var text = node.innerText;
+        alert(text);
+        //console.log(text);
+    });
+</script>
+
+<script>
+    $('#Go_Button').on('click', function () {
+        var from_Date_String = document.getElementById('datepicker_From').value;
+        var to_Date_String = document.getElementById('datepicker_To').value;
+
+        //0 Date
+        //1 Month
+        //2 year
+        //console.log(from_Date.split('/')[2]);
+
+        var from_Date_Int = parseInt(from_Date_String.split('/')[0]);
+        var from_Month_Int = parseInt(from_Date_String.split('/')[1]);
+        var from_Year_Int = parseInt(from_Date_String.split('/')[2]);
+
+        var to_Date_Int = parseInt(to_Date_String.split('/')[0]);
+        var to_Month_Int = parseInt(to_Date_String.split('/')[1]);
+        var to_Year_Int = parseInt(to_Date_String.split('/')[2]);
+
+        var from_Date = new Date(from_Year_Int, from_Month_Int, from_Date_Int);
+        var to_Date = new Date(to_Year_Int, to_Month_Int, to_Date_Int);
+
+        if (from_Date > to_Date) {
+            alert("ERROR : From date can not be bigger than To Date\nFrom Date : " + from_Date_String + "\nTo Date : " + to_Date_String);
+        } else {
+            alert("Sucess");
+        }
+
+    });
+</script>
+
+<hr>
+
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Ashish Rathi 2021</span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+
+
+
+</html>
