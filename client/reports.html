@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="./css/Datepicker/jquery.datetimepicker.min.css">
 
     <!-- Jquery -->
-    <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="./js/jquery/jquery.min.js" type="text/javascript"></script>    
     <script src="./js/PapaParse/papaparse.min.js"></script>
 
 
     <!-- bootstrap -->
-    <script src="./js/bootstrap/bootstrap.min.js"></script>
     <script src="./js/bootstrap/popper.min.js"></script>
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+    
 
     <!-- ChartJs -->
     <script src="./js/Chartjs/Chart.min.js" type="text/javascript"></script>
@@ -109,7 +110,7 @@
                                     <h2 class="mb-0">
                                         <button class="btn btn-link" type="button" data-toggle="collapse"
                                             data-target="#report_One" aria-expanded="false" aria-controls="report_One">
-                                            Download Report with Date Range
+                                            Download Report with Date Range & Category Type
                                         </button>
                                     </h2>
                                 </div>
@@ -125,32 +126,43 @@
 
                                         <p></p>
 
-                                        <div class=".col-xl-6" style="margin-left: 30%;">
+                                        <div class=".col-xl-6" style="margin-left: 20%;">
                                             <div class="form-group">
                                                 <div class="input-group-prepend">
                                                     <!-- <button style="font-size:18px" id="toggle" class="input-group-text">Select From Date. <i class="fa fa-calendar"></i></button> -->
                                                     <h4>Select From Date <i class="fa fa-calendar"></i></h4>
-                                                    <h4 style="margin-left: 50px;">Select To Date <i
-                                                            class="fa fa-calendar"></i></h4>
+                                                    <h4 style="margin-left: 50px;">Select To Date <i class="fa fa-calendar"></i></h4>
+                                                    <h4 style="margin-left: 50px;">Status</h4>
+                                                            
                                                 </div>
                                                 <input type="text" id="datepicker_From" placeholder="pick a date">
-                                                <input type="text" id="datepicker_To" style="margin-left: 70px;"
-                                                    placeholder="pick a date">
+                                                <input type="text" id="datepicker_To" style="margin-left: 70px;" placeholder="pick a date">
+                                                
+                                                <select class="form-select" style="margin-left: 40px;">                                                        
+                                                    <option value="In-Progress" selected>In-Progress</option>
+                                                    <option value="Open">Open</option>
+                                                    <option value="Closed">Closed</option>
+                                                </select>
+
+                                                        
                                                 <button type="button" class="btn btn-primary" id="Go_Button"
                                                     style="margin-left: 30px;">Go</button>
                                             </div>
                                         </div>
 
+
+
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="card">
                                 <div class="card-header" id="headingTwo">
                                     <h2 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                             data-target="#collapseTwo" aria-expanded="false"
                                             aria-controls="collapseTwo">
-                                            Collapsible Group Item #2
+                                            Download Report with Date Range
                                         </button>
                                     </h2>
                                 </div>
@@ -226,6 +238,7 @@
             </div>
         </div>
     </div>
+
 
 </body>
 
